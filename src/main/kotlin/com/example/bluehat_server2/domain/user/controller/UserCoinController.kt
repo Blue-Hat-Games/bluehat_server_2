@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/user/coin")
-class UserCoinController(private val userCoinService : UserCoinService){
+class UserCoinController(private val userCoinService: UserCoinService) {
 
     @GetMapping
-    fun getUserCoin() : String {
+    fun getUserCoin(): String {
         return userCoinService.getUserCoin()
     }
 
     @PatchMapping
-    fun updateUserCoin() : String {
+    fun updateUserCoin(): String {
         return userCoinService.updateUserCoin()
     }
 

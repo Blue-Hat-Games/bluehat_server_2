@@ -10,15 +10,15 @@ class UserService {
         return listOf(result)
     }
 
-    fun joinUser() : String {
+    fun joinUser(): String {
         return "UserJoin"
     }
 
-    fun deleteUser() : String {
+    fun deleteUser(): String {
         return "UserDelete"
     }
 
-    fun updateUserInfo() : String {
+    fun updateUserInfo(): String {
         return "updateUserInfo"
     }
 

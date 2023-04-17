@@ -5,10 +5,11 @@ import org.springframework.stereotype.Service
 @Service
 class UserEggService {
 
-    fun getUserEgg() : String {
+    fun getUserEgg(): String {
         return "user Egg"
     }
-    fun updateUserEgg() : String {
+
+    fun updateUserEgg(): String {
         return "update User Egg"
     }
 }

@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/user/egg")
-class UserEggController(private val userEggService : UserEggService){
+class UserEggController(private val userEggService: UserEggService) {
 
     @GetMapping
-    fun getUserEgg() : String {
-        return userEggService.getUserEgg();
+    fun getUserEgg(): String {
+        return userEggService.getUserEgg()
     }
 
     @PatchMapping
-    fun updateUserEgg() : String {
-        return userEggService.updateUserEgg();
+    fun updateUserEgg(): String {
+        return userEggService.updateUserEgg()
     }
 }

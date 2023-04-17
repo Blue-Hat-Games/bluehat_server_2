@@ -4,10 +4,11 @@ import org.springframework.stereotype.Service
 
 @Service
 class UserCoinService {
-    fun getUserCoin() : String {
+    fun getUserCoin(): String {
         return "user Coin"
     }
-    fun updateUserCoin() : String {
+
+    fun updateUserCoin(): String {
         return "update User coin"
     }
 
