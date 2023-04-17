@@ -6,6 +6,7 @@ plugins {
     id 'org.asciidoctor.convert' version '2.4.0'
     id 'org.jetbrains.kotlin.jvm' version '1.7.22'
     id 'org.jetbrains.kotlin.plugin.spring' version '1.7.22'
+    id 'org.jetbrains.kotlin.plugin.jpa' version '1.7.22'
 }
 
 group = 'com.example'
@@ -22,7 +23,6 @@ ext {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
     implementation 'org.jetbrains.kotlin:kotlin-reflect'
@@ -38,6 +38,12 @@ tasks.withType(KotlinCompile) {
         freeCompilerArgs = ['-Xjsr305=strict']
         jvmTarget = '17'
     }
+}
+
+allOpen {
+    annotation("javax.persistence.Entity")
+    annotation("javax.persistence.MappedSuperclass")
+    annotation("javax.persistence.Embeddable")
 }
 
 tasks.named('test') {
