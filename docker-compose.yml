@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  redis:
+    container_name: bluehat-redis
+    image: redis
+    command: redis-server --port 6379
+    hostname: redis
+    labels:
+      - "name=redis"
+      - "mode=standalone"
+    ports:
+      - "6379:6379"
+  nginx:
+    container_name: bluehat-nginx
+    build:
+      context: ./Infrastructure/nginx
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+  backend:
+    container_name: bluehat-backend
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
